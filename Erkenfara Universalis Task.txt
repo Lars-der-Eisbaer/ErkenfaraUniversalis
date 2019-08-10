@@ -1,0 +1,17 @@
+Current Tasks:
+1. Create and currate the list of stategic advantages. (common)
+2. Convert the original Erkenfara map from hex to region (open)
+3. Write V 1 of rulebook (Lars)
+4. Create smaller maps for testing of scenarios like inner continental war, island war, see war (Bobby)
+5. Create empire statt+tracking chart (Lars)
+6. Define stakeholder (Bobby)
+
+later Tasks:
+For Verion 1.05
+1. Introduce Characters and their classes (General, Admiral and Mage)
+2. Introduce interaction with the trading card game
+
+For Version 1.x
+1. Colonial War extension
+2. Developt Politcal system
+3. Asymetic Empires

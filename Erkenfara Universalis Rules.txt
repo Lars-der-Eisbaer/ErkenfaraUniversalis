@@ -1,0 +1,38 @@
+Erkenfara Univeralis
+Basic Rules:
+
+Abstract:
+Erkenfara Univeralis is an ethernal stategic boardgame for any number of competing empires.
+These rules are on purpose keeped simple to ensure maximal flexibilty and easy bookkeeping.
+Usually there is a simple basic rule, which can be modified by condition of participating parties.
+For Example: An army might be exhausted and therefore have lower chances in battle.
+This game has no inherent win or lose condition and can only function,
+if all engaging parties and empires have an internal goal in mind while remaining open to the political aspectes of the game.
+These rules define how economice and military mechanics function. 
+It doesn't strive to simpulate how empire internal affairse function or how the empire engange with each other politically.
+
+To guide in the interpretion of the rules, the design guildlines are defined here:
+1. It is supposed to be an ethernal game. 
+	a. no snowball mechanics.
+	b. create breaks to slow winning parties down.
+2. It is suppored to be a conflict simplation/stategic game.
+3. It is supposed to work with any kind of map.
+4. It is supposed to be easily modived to allow the integration of other games (paralell rollplay game/trading card game).
+5. Keep it as simple as possible.
+
+
+Table of Contents:
+1. Order of Play
+	a. Tools of Play
+	b. Structure of a Round
+2. The economy turn
+	a. Generate Income
+	b. Pay Upkeep
+	c. Build new Troops
+	d. Update Region status
+3. The military turns
+	a. Update Status
+	b. Movement of Armees
+	c. Resove Conflict or take a action
+	d. Recovery of moral
+	
