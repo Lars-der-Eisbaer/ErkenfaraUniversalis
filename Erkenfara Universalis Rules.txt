@@ -4,7 +4,7 @@ Basic Rules:
 Abstract:
 Erkenfara Univeralis is an ethernal stategic boardgame for any number of competing empires.
 These rules are on purpose keeped simple to ensure maximal flexibilty and easy bookkeeping.
-Usually there is a simple basic rule, which can be modified by condition of participating parties.
+Usually there is a simple basic rule, which can be modified by stati of participating parties.
 For Example: An army might be exhausted and therefore have lower chances in battle.
 This game has no inherent win or lose condition and can only function,
 if all engaging parties and empires have an internal goal in mind while remaining open to the political aspectes of the game.
@@ -23,8 +23,8 @@ To guide in the interpretion of the rules, the design guildlines are defined her
 
 Table of Contents:
 1. Order of Play
-	a. Tools of Play
-	b. Structure of a Round
+	a. Structure of a Round
+	b. Tools of Play
 2. The economy turn
 	a. Generate Income
 	b. Pay Upkeep
@@ -33,6 +33,57 @@ Table of Contents:
 3. The military turns
 	a. Update Status
 	b. Movement of Armees
-	c. Resove Conflict or take a action
+	c. Resove Conflict or take action
 	d. Recovery of moral
 	
+1. Order of Play
+A round in Erkenfara Univeralis (short EU) consists of 1 economy turn and 3 consecutive military turns.
+This round strucure represents the four seasons starting with the economy turn in winter.
+While the military turns occure in a fixed order one empire after an other, the economy turn can be performed simultanius.
+
+Each Empire in EU is represented by 3 factors:
+1. The treasurey
+2. The regions owned by the empire
+3. The armies executing the will of the empire
+
+Each region and armee can be influenced by one or more status.
+
+Regions can inhabit up to one land armee and up to one see armee.
+In addition to that, each region if one of 3 types.
+Seeregion, landregion or fortification.
+Seeregions can be traversed by any armee, have no production value and can't be owned by any empire.
+Landregions can't be travesed by see armees, have a production value and can be owned by an empire.
+Fortifications are a special kind of landregions. They only are adjacend to a single landregion and have 1-4 level of fortification.
+
+Each armee has a value and a location.
+The location is the current region the armee resides in.
+The value of an armee is both it's production cost and it's measure of strength.
+If for any reason and at any time the current value of an armee drops below 1000, the armee is scatterd and removed from the game.
+In additon to that each armee if one of two types:
+See armee or Land armee.
+See armees can only exist in see regions and are quicker than land armees.
+Land armees can exist in any region, but add no combat strength while in a see region.  
+
+2. The economy turn:
+During the economy turn all empires can go through the following steps in parallel.
+	a. Generate Income
+	b. Pay Upkeep
+	c. Build new Troops
+	d. Update Region status
+	
+a) Generate Income
+Each region generates it's production value in gold and adds it to the treasurey.
+This production might be modived by the following condition:
+	Taxed/Plundered: A taxed/plundered region is considert to have a production value of zero.
+	Salted: A salted region is considert to have a production value of zero and will next round still be taxed/plundered.
+	Occupied: An occupied region doesn't provide it's production value to the owner, but instead provide 20% of it's production to the occupiing empire.
+	
+b) Pay Upkeep
+Sustaining an armee is a costly matter and the bigger it gets the highter the expanses get.
+At this point the value of any owned armee may be reduced to any lower number.
+The remaining value of all owned armees is summed up and used to calcualte the cost of upkeep using this formular:
+Upkeep Cost f(x) = (3/140000)*x^2 - 1,35714285714286 *x + 21428,5714285713
+Exception: Should your total army value be below 30.000, the upkeep cost is 0.
+
+
+
