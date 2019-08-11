@@ -56,7 +56,7 @@ Seeregions can be traversed by any armee, have no production value and can't be 
 Landregions can't be travesed by see armees, have a production value and can be owned by an empire.
 Fortifications are a special kind of landregions. They only are adjacend to a single landregion and have 1-4 level of fortification.
 
-Each armee has a value, a location and the amout of real and/or moral damage sustained in percent.
+Each armee has a current and maximal value and a location.
 The location is the current region the armee resides in.
 The value of an armee is both it's production cost and it's measure of strength.
 If for any reason and at any time the current value of an armee drops below 1000, the armee is scatterd and removed from the game.
@@ -85,7 +85,7 @@ This production might be modived by the following condition:
 b) Pay Upkeep
 Sustaining an armee is a costly matter and the bigger it gets the highter the expanses get.
 At this point the value of any owned armee may be reduced to any lower number.
-The remaining value of all owned armees is summed up and used to calcualte the cost of upkeep using this formular:
+The remaining maximal value of all owned armees is summed up and used to calcualte the cost of upkeep using this formular:
 Upkeep Cost f(x) = (3/140000)*x^2 - 1,35714285714286 *x + 21428,5714285713
 Exception: Should your total army value be below 30.000, the upkeep cost is 0.
 
@@ -93,7 +93,9 @@ c) Build new Troops
 Now it is time to build new armees and reinforce the existing ones. This process is call raising troops.
 The amount of gold that can be used to raise troops is limited to the total production value of the entire empire at the current time.
 There is no limit to the amount of troups that can be raised at a specific location, but troups can only be raised at specific location.
-These location are owned fortifications not affacted by a negative status and rested armees in owned regions not affacted by a negative status.
+These location are owned fortifications not affacted by a negative status,  owned see regions adjacend to fortifications with no negative status or enemy armee inside
+and rested armees in owned regions not affacted by a negative status.
+Each gold coint spend to added to both the current and the maximal value of the armee.
 
 d) Update Region status
 The last step in the economy round is update the status in each region.
@@ -123,9 +125,9 @@ These united armees have each status of the participating armee, all though each
 
 c) Resolve Conflict or take action
 Should one of your armees now stand in the same region as an enemy armee it is time to resove a conflict with *glorius* combat.
-As this might be a longer segment, it will be addrest after the military turn is completly defined.
-For now it is enough to understand that all participating armees may sustain real and/or moral damage and one or both will be destroy or retreat to an adjacend region.
-Shoud an armee retreat it gets the exhausted status and must move to an ajacent region with no enemy troups in it. 
+As this will be a longer segment, it is be addrest after the military turn is completly defined.
+For now it is enough to understand that all participating armees may sustain a reduction to their current and/or maximal value and one or both armees will be destroy and/or retreat to an adjacend region.
+Should an armee retreat it gets the exhausted status and must move to an ajacent region with no enemy troups in it. 
 If more than one armee retreat they are resolved in turn order, starting with the next empire in that order, such that the current empire resolves last.
 
 If an armee is not resoving a comflict it may perform any of the following action with the region it is currently in:
@@ -138,17 +140,16 @@ If an armee is not resoving a comflict it may perform any of the following actio
 	v) rest and recover: If an armee didn't move and takes this action it get's the well rested status.
 
 d) Recovery of moral
-At the end of the empire's military turn, any moral damager of the current empire's armees is removed.
-All real damage on the other hand is resolved by setting the total power of the armee to its current power.
+At the end of the empire's military turn, the current value of all their armees becomes the maximal value.
 
 After this the next empire in turn order takes it's military turn, until all have taken a turn and the next round beginns.
 
 4. Resolving Conflict
 When resolving conflict in *glorius* combat it is done between to sides in the following steps:
 1. Calculate the current total strenght of both sides:
-	Simple add the value of each armee on a side togather and announce that strengh.
+	Simple announce the current value of each armee, this is their strengh.
 2. Calcuate the strenght advantage of the bigger Armee:
-	A = Stronger Armee, B = weaker Armee, Strenght advantage = (A-B)/B in % or (A/B) in percent - 100%
+	A = current Value Stronger Armee, B = current value weaker Armee, Strenght advantage = (A-B)/B in % or (A/B) in percent - 100%
 3. Determin the Strategic Advantage of each side.
 	For each side please consult the stragegic advanage table and determin the total advantage in %
 		well rested status +10%
@@ -160,17 +161,18 @@ When resolving conflict in *glorius* combat it is done between to sides in the f
 		Heros in the Armee +3% / Grad
 		Enchantment Trading Cards level 1-3 +10% per leve
 4. Roll the dice and add advantages:
-	Each side rolls a w100/w% and adds it's strategic advantage and the stronger armee adds also it's strengh advantage.
+	Each side rolls a w100/w% and adds it's strategic advantage and the stronger armee also adds it's strengh advantage.
 	The higher result it considert the winner, the lower result is considert the loser
 5. Determin loses
-	Subtract the loses result from the winners result and consult this table for the damage each side sistains.
-		Difference			Winner takes damage				Loser takes damage
-		-+50     Draw			5% real + 5% moral damage		5% real and + 5% moral damage
-		51-100   Minor			5% real + 5% moral damage		10% real and 10% moral damage
-		101-200	 Major			5% real damage					15% real and 15% moral damage
-		201+     Superior		5% real + 5% moral damage		50% real and 50% moral damage
+	Subtract the losers result from the winners result and consult this table for the damage each side sustain.
+	The damage is allways a percantage of the current or maximal value that is deducted from the respective stat.
+		Difference			Winner 							Loser takes damage
+		-+50     Draw	   10% of current + 5% of maximal		10% of current +  5% of maximal
+		51-100   Minor	   10% of current + 5% of maximal		20% of current + 10% of maximal
+		101-200	 Major	    5% of current + 5% of maximal		30% of current + 15% of maximal
+		201+     Superior  10% of current + 5% of maximal		100% of current + 50% of maximal
 6. Retreat
-	Should any armee now be reduced below a value of 1000 it is disbanded and removed from the game.
+	Should any armee now be reduced below a current value of 1000 it is disbanded and removed from the game.
 	Each side desides simultanius if they want to abonden the conflict and retreat.
 	If none retreat the conflict start a new and the steps 1-6. have to be repeated.
 	If one side retreats moves to a adjacent region and the remaining side stays in the region.
